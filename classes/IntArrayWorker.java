@@ -11,6 +11,47 @@ public class IntArrayWorker
     matrix = theMatrix;
   }
   
+  
+  /*
+   * total number of times an int appears in matrix
+   */
+  public int getCount(int a) {
+	  int count = 0;
+	  for (int[] rows: matrix) {
+		  for (int i: rows) {
+			  if (i == a) {
+				  count++;
+			  }
+		  }
+	  }
+	  return count;
+  }
+  /*
+   * returns largest number in matrix
+   */
+  public int getLargest() {
+	  int a = matrix[0][0];
+	  for (int[] rows: matrix) {
+		  for (int i: rows) {
+			  if (i > a) {
+				  a = i;
+			  }
+		  }
+	  }
+	  return a;
+  }
+  
+  /*
+   * returns total of all values in a column
+   */
+  public int getColTotal(int col) {
+	  int total = 0;
+	  for (int[] i: matrix) {
+		  total += i[col];
+	  }
+	  return total;
+  }
+  
   /**
    * Method to return the total 
    * @return the total of the values in the array
